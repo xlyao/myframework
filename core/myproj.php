@@ -32,6 +32,10 @@ class myproj
         }
     }
 
+    /** 自动加载类
+     * @param $class
+     * @return bool
+     */
     static public function load($class) {
         //自动加载类库
         //new \core\route();
@@ -51,10 +55,17 @@ class myproj
         }
     }
 
+    /** 赋值变量
+     * @param $name
+     * @param $value
+     */
     public function assign($name, $value) {
         $this->assign[$name] = $value;
     }
 
+    /** 显示视图文件
+     * @param $file
+     */
     public function display($file) {
         $path = APP . '/views/' . $file;
         if (is_file($path)) {

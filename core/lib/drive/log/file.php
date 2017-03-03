@@ -20,6 +20,11 @@ class file
         $this->path = $conf['path'];
     }
 
+    /** 写日志
+     * @param $message
+     * @param string $file
+     * @return int
+     */
     public function log($message, $file = 'log') {
         if (!is_dir($this->path . date('YmdH'))) {
             mkdir($this->path . date('YmdH'), '0777', true);

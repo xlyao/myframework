@@ -13,6 +13,9 @@ class log
 {
     static $class;
 
+    /**
+     * 初始化日志类
+     */
     static public function init() {
         //确定存储方式
         $drive = conf::get('drive', 'log');
@@ -20,6 +23,10 @@ class log
         self::$class = new $class;
     }
 
+    /** 写日志
+     * @param $message
+     * @param string $file
+     */
     static public function log($message, $file = 'log') {
         self::$class->log($message, $file);
     }
